@@ -70,8 +70,14 @@ html
 					align-items center
 					justify-content space-between
 					cursor pointer
-					span
+					span, a
 						margin-right auto
+						&.clear
+							display none
+							margin-right 55px
+						&.dl
+							display none
+							margin-right 55px
 						&.num
 							margin-right 55px
 					&:after
@@ -85,6 +91,11 @@ html
 					padding 20px
 					box-sizing border-box
 					display none
+					&.draw
+						// background-color grey
+						canvas
+							cursor crosshair
+							// background-color lightgrey
 			&.active
 				margin-bottom auto
 				height 100%
@@ -94,4 +105,7 @@ html
 					flex-grow 1
 					overflow auto
 					min-height 0
+				a.dl
+				a.clear
+					display inline!important
 

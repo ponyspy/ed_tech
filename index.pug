@@ -12,6 +12,7 @@ html
 		link(rel='stylesheet', type='text/css', href='css/main.css')
 		script(type='text/javascript', src='js/jquery-3.4.1.min.js')
 		script(type='text/javascript', src='js/swiper-bundle.min.js')
+		script(type='text/javascript', src='js/sketchpad.js')
 		script(type='text/javascript', src='js/main.js')
 		include _counters.pug
 	body
@@ -29,6 +30,15 @@ html
 			.sections_block
 
 				.section_item.active
+					.column
+						.column_title
+							span.num 0
+							span главная
+							a.clear(href='#') очистить
+							a.dl(href='#') скачать
+						.column_body.draw
+
+				.section_item
 					.column
 						.column_title
 							span.num 1

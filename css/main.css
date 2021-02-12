@@ -86,10 +86,22 @@ html p {
   justify-content: space-between;
   cursor: pointer;
 }
-.outer_block .sections_block .section_item .column .column_title span {
+.outer_block .sections_block .section_item .column .column_title span,
+.outer_block .sections_block .section_item .column .column_title a {
   margin-right: auto;
 }
-.outer_block .sections_block .section_item .column .column_title span.num {
+.outer_block .sections_block .section_item .column .column_title span.clear,
+.outer_block .sections_block .section_item .column .column_title a.clear {
+  display: none;
+  margin-right: 55px;
+}
+.outer_block .sections_block .section_item .column .column_title span.dl,
+.outer_block .sections_block .section_item .column .column_title a.dl {
+  display: none;
+  margin-right: 55px;
+}
+.outer_block .sections_block .section_item .column .column_title span.num,
+.outer_block .sections_block .section_item .column .column_title a.num {
   margin-right: 55px;
 }
 .outer_block .sections_block .section_item .column .column_title:after {
@@ -105,6 +117,9 @@ html p {
   box-sizing: border-box;
   display: none;
 }
+.outer_block .sections_block .section_item .column .column_body.draw canvas {
+  cursor: crosshair;
+}
 .outer_block .sections_block .section_item.active {
   margin-bottom: auto;
   height: 100%;
@@ -115,4 +130,8 @@ html p {
   flex-grow: 1;
   overflow: auto;
   min-height: 0;
+}
+.outer_block .sections_block .section_item.active a.dl,
+.outer_block .sections_block .section_item.active a.clear {
+  display: inline !important;
 }
