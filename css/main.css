@@ -10,7 +10,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: #f00;
 }
 .sections_block .section_item {
   width: 100%;
@@ -19,12 +18,20 @@ html {
   flex-direction: row;
 }
 .sections_block .section_item .column {
-  margin: 10px;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-/* for Firefox */
   min-height: 0;
+  border-right: 1px solid #000;
+}
+.sections_block .section_item .column:last-child {
+  border-right: none;
+}
+.sections_block .section_item .column.none {
+  background: linear-gradient(to top left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) calc(50% - 0.8px), #000 50%, rgba(0,0,0,0) calc(50% + 0.8px), rgba(0,0,0,0) 100%);
 }
 .sections_block .section_item .column .column_body {
   display: none;
@@ -38,6 +45,5 @@ html {
   display: block;
   flex-grow: 1;
   overflow: auto;
-/* for Firefox */
   min-height: 0;
 }
