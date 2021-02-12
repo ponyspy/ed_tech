@@ -7,17 +7,16 @@ html
 	a
 		color rgb(238, 56, 49)
 	p
+		margin 0
+		padding 0
 		font-size 18pt
-		text-indent 50px
+		text-indent 80px
 
-.column_body::-webkit-scrollbar {
-	display: none;
-}
-
-.column_body {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
+.column_body
+	-ms-overflow-style none
+	scrollbar-width none
+	&::-webkit-scrollbar
+		display none
 
 .outer_block
 	display flex
@@ -54,8 +53,6 @@ html
 				border-top none
 			.column
 				width 50%
-				padding 20px
-				box-sizing border-box
 				flex-grow 1
 				display flex
 				flex-direction column
@@ -65,7 +62,12 @@ html
 					border-right none
 				&.none
 					background: linear-gradient(to top left, rgba(238, 56, 49, 0) 0%, rgba(238, 56, 49, 0) calc(50% - 0.8px), rgba(238, 56, 49, 1) 50%, rgba(238, 56, 49, 0) calc(50% + 0.8px), rgba(238, 56, 49, 0) 100%)
+				.column_title
+					padding 20px
+					box-sizing border-box
 				.column_body
+					padding 20px
+					box-sizing border-box
 					display none
 			&.active
 				margin-bottom auto
