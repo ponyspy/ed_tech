@@ -3,45 +3,82 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  color: #ee3831;
 }
-.sections_block {
-  width: 100%;
+body a,
+html a {
+  color: #ee3831;
+}
+body p,
+html p {
+  font-size: 18pt;
+  text-indent: 50px;
+}
+.outer_block {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.outer_block .main_block {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ee3831;
+}
+.outer_block .main_block .main_title {
+  margin-bottom: auto;
+  padding: 20px;
+  font-size: 7vw;
+}
+.outer_block .main_block .main_desc {
+  padding: 20px;
+}
+.outer_block .main_block .main_footer {
+  padding: 20px;
+  border-top: 1px solid #ee3831;
+}
+.outer_block .sections_block {
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.sections_block .section_item {
+.outer_block .sections_block .section_item {
   width: 100%;
-  border-top: 1px solid #000;
+  border-top: 1px solid #ee3831;
   display: flex;
   flex-direction: row;
 }
-.sections_block .section_item .column {
+.outer_block .sections_block .section_item:first-child {
+  border-top: none;
+}
+.outer_block .sections_block .section_item .column {
   width: 50%;
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-right: 1px solid #000;
+  border-right: 1px solid #ee3831;
 }
-.sections_block .section_item .column:last-child {
+.outer_block .sections_block .section_item .column:last-child {
   border-right: none;
 }
-.sections_block .section_item .column.none {
+.outer_block .sections_block .section_item .column.none {
   background: linear-gradient(to top left, rgba(0,0,0,0) 0%, rgba(0,0,0,0) calc(50% - 0.8px), #000 50%, rgba(0,0,0,0) calc(50% + 0.8px), rgba(0,0,0,0) 100%);
 }
-.sections_block .section_item .column .column_body {
+.outer_block .sections_block .section_item .column .column_body {
   display: none;
 }
-.sections_block .section_item.active {
+.outer_block .sections_block .section_item.active {
   margin-bottom: auto;
   height: 100%;
   overflow: scroll;
 }
-.sections_block .section_item.active .column_body {
+.outer_block .sections_block .section_item.active .column_body {
   display: block;
   flex-grow: 1;
   overflow: auto;
