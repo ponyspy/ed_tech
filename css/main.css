@@ -80,6 +80,17 @@ html p {
 .outer_block .sections_block .section_item .column .column_title {
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.outer_block .sections_block .section_item .column .column_title:after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #ee3831;
 }
 .outer_block .sections_block .section_item .column .column_body {
   padding: 20px;
