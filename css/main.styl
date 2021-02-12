@@ -1,0 +1,38 @@
+body
+html
+	margin 0
+	padding 0
+	height 100%
+
+.sections_block
+	width 100%
+	height 100%
+	display flex
+	flex-direction column
+	justify-content flex-end
+	background-color red
+	.section_item
+		width 100%
+		border-top 1px solid black
+		display flex
+		flex-direction row
+		.column
+			margin 10px
+			flex-grow 1
+			display flex
+			flex-direction column
+			/* for Firefox */
+			min-height 0
+			.column_body
+				display none
+		&.active
+			margin-bottom auto
+			height 100%
+			overflow scroll
+			.column_body
+				display block
+				flex-grow 1
+				overflow auto
+				/* for Firefox */
+				min-height 0
+

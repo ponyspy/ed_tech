@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.sections_block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #f00;
+}
+.sections_block .section_item {
+  width: 100%;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+}
+.sections_block .section_item .column {
+  margin: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+/* for Firefox */
+  min-height: 0;
+}
+.sections_block .section_item .column .column_body {
+  display: none;
+}
+.sections_block .section_item.active {
+  margin-bottom: auto;
+  height: 100%;
+  overflow: scroll;
+}
+.sections_block .section_item.active .column_body {
+  display: block;
+  flex-grow: 1;
+  overflow: auto;
+/* for Firefox */
+  min-height: 0;
+}
