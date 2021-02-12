@@ -14,6 +14,13 @@ html p {
   font-size: 18pt;
   text-indent: 50px;
 }
+.column_body::-webkit-scrollbar {
+  display: none;
+}
+.column_body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .outer_block {
   display: flex;
   flex-direction: row;
