@@ -83,6 +83,13 @@ html p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+}
+.outer_block .sections_block .section_item .column .column_title span {
+  margin-right: auto;
+}
+.outer_block .sections_block .section_item .column .column_title span.num {
+  margin-right: 50px;
 }
 .outer_block .sections_block .section_item .column .column_title:after {
   content: '';
