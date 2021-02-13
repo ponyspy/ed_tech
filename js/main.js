@@ -1,21 +1,21 @@
 $(function() {
 
-	$('.section_item').on('click', function() {
+	$('.section_item').on('mouseenter', function() {
 		$('.section_item').removeClass('active').filter(this).addClass('active');
 	});
 
 	var draw_el = $('.draw')[0];
 	var pad = new Sketchpad(draw_el, {
-		line: {
-			size: 5
-		}
+		width: draw_el.offsetWidth - 40,
+		height: draw_el.offsetHeight - 40
 	});
 
+	pad.setLineSize(8);
 	pad.setLineColor('#ee3831');
-	pad.resize(draw_el.offsetWidth - 40);
 
 	window.onresize = function(e) {
-		pad.resize(draw_el.offsetWidth - 40);
+		pad.setCanvasSize(draw_el.offsetWidth - 40, draw_el.offsetHeight - 40);
+		pad.redraw();
 	}
 
 	$('.clear').on('click', function(e) {
