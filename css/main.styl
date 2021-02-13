@@ -26,93 +26,121 @@ html
 
 .outer_block
 	display flex
-	flex-direction row
+	flex-direction column
 	height 100%
-	.main_block
-		width 50%
-		box-sizing border-box
+	.header_block
 		display flex
-		flex-direction column
-		border-right 1px solid rgb(238, 56, 49)
-		.main_title
-			letter-spacing -0.05em
-			margin-bottom auto
-			padding 20px
-			font-size 7vw
-		.main_desc
-			padding 20px
-		.main_footer
-			padding 20px
-			border-top 1px solid rgb(238, 56, 49)
-
-	.sections_block
-		width 50%
-		height 100%
+		flex-direction row
+		min-height 21px
+		border-bottom 1px solid rgb(238, 56, 49)
+		overflow hidden
+		padding 20px
+		.header_inner
+			white-space nowrap
+		span
+			&:after
+				margin-right 140px
+				margin-left 140px
+				content ''
+				display inline-block
+				width 12px
+				height 12px
+				border-radius 100%
+				background-color rgb(238, 56, 49)
+			&:last-child:after
+				display none
+	.content_block
 		display flex
-		flex-direction column
-		justify-content flex-end
-		.section_item
-			width 100%
-			border-top 1px solid rgb(238, 56, 49)
+		flex-direction row
+		flex-grow 1
+		min-height 0
+		.main_block
+			width 50%
+			box-sizing border-box
 			display flex
-			flex-direction row
-			&:first-child
-				border-top none
-			.column
-				width 50%
-				flex-grow 1
-				display flex
-				flex-direction column
-				min-height 0
-				border-right 1px solid rgb(238, 56, 49)
-				&:last-child
-					border-right none
-				&.none
-					// cursor pointer
-					background: linear-gradient(to top left, rgba(238, 56, 49, 0) 0%, rgba(238, 56, 49, 0) calc(50% - 0.8px), rgba(238, 56, 49, 1) 50%, rgba(238, 56, 49, 0) calc(50% + 0.8px), rgba(238, 56, 49, 0) 100%)
-				.column_title
-					padding 20px
-					box-sizing border-box
-					display flex
-					align-items center
-					justify-content space-between
-					// cursor pointer
-					span, a
-						margin-right auto
-						&.clear
-							display none
-							margin-right 55px
-						&.dl
-							display none
-							margin-right 55px
-						&.num
-							margin-right 55px
-					&:after
-						content ''
-						display inline-block
-						width 12px
-						height 12px
-						border-radius 100%
-						background-color rgb(238, 56, 49)
-				.column_body
-					padding 20px
-					box-sizing border-box
-					display none
-					&.draw
-						// background-color grey
-						canvas
-							cursor crosshair
-							// background-color lightgrey
-			&.active
+			flex-direction column
+			border-right 1px solid rgb(238, 56, 49)
+			.main_title
+				letter-spacing -0.05em
 				margin-bottom auto
-				height 100%
-				overflow scroll
-				.column_body
-					display block
+				padding 20px
+				font-size 7vw
+			.main_desc
+				padding 20px
+			.main_footer
+				padding 20px
+				border-top 1px solid rgb(238, 56, 49)
+
+		.sections_block
+			width 50%
+			flex-grow 1
+			min-height 0
+			display flex
+			flex-direction column
+			justify-content flex-end
+			.section_item
+				width 100%
+				border-top 1px solid rgb(238, 56, 49)
+				display flex
+				flex-direction row
+				&:first-child
+					border-top none
+				.column
+					width 50%
 					flex-grow 1
-					overflow auto
+					display flex
+					flex-direction column
 					min-height 0
-				a.dl
-				a.clear
-					display inline!important
+					border-right 1px solid rgb(238, 56, 49)
+					&:last-child
+						border-right none
+					&.none
+						cursor pointer
+						background: linear-gradient(to top left, rgba(238, 56, 49, 0) 0%, rgba(238, 56, 49, 0) calc(50% - 0.8px), rgba(238, 56, 49, 1) 50%, rgba(238, 56, 49, 0) calc(50% + 0.8px), rgba(238, 56, 49, 0) 100%)
+					.column_title
+						padding 20px
+						box-sizing border-box
+						display flex
+						align-items center
+						justify-content space-between
+						cursor pointer
+						span, a
+							margin-right auto
+							&.clear
+								display none
+								margin-right 55px
+							&.dl
+								display none
+								margin-right 55px
+							&.num
+								margin-right 55px
+						&:after
+							content ''
+							display inline-block
+							width 12px
+							height 12px
+							border-radius 100%
+							background-color rgb(238, 56, 49)
+					.column_body
+						padding 20px
+						box-sizing border-box
+						display none
+						&.draw
+							// background-color grey
+							canvas
+								cursor crosshair
+								// background-color lightgrey
+				&.active
+					margin-bottom auto
+					flex-grow 1
+					min-height 0
+					overflow scroll
+					.column_body
+						display block
+						flex-grow 1
+						overflow auto
+						min-height 0
+					a.dl
+					a.clear
+						display inline!important
 
