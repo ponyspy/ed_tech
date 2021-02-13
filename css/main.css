@@ -1,9 +1,14 @@
+@font-face {
+  font-family: 'ABCFavoritPro-Light';
+  src: url("../fonts/ABCFavoritPro-Light-Trial.woff2");
+}
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
   color: #ee3831;
+  font-family: ABCFavoritPro-Light;
 }
 body a,
 html a {
@@ -36,6 +41,7 @@ html p {
   border-right: 1px solid #ee3831;
 }
 .outer_block .main_block .main_title {
+  letter-spacing: -0.05em;
   margin-bottom: auto;
   padding: 20px;
   font-size: 7vw;
