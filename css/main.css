@@ -36,13 +36,10 @@ html p {
 .outer_block .header_block {
   display: flex;
   flex-direction: row;
-  min-height: 21px;
   border-bottom: 1px solid #ee3831;
   overflow: hidden;
   padding: 20px;
-}
-.outer_block .header_block .header_inner {
-  white-space: nowrap;
+  min-height: 21px;
 }
 .outer_block .header_block span:after {
   margin-right: 140px;
