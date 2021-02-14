@@ -1,6 +1,11 @@
 @font-face {
-  font-family: 'ABCFavoritPro-Light';
-  src: url('../fonts/ABCFavoritPro-Light-Trial.woff2');
+	font-family: 'ABCFavoritPro-Light';
+	src: url('../fonts/ABCFavoritPro-Light-Trial.woff2');
+}
+
+@keyframes marquee {
+	0% { left: 0; }
+	100% { left: -100%; }
 }
 
 body
@@ -9,7 +14,7 @@ html
 	padding 0
 	height 100%
 	color rgb(238, 56, 49)
-	font-family ABCFavoritPro-Light
+	font-family 'ABCFavoritPro-Light'
 	a
 		color rgb(238, 56, 49)
 	p
@@ -24,29 +29,44 @@ html
 	&::-webkit-scrollbar
 		display none
 
+.os-scrollbar
+	margin 4px!important
+
+.os-scrollbar-handle
+	background rgb(238, 56, 49)!important
+
 .outer_block
 	display flex
 	flex-direction column
 	height 100%
 	.header_block
+		position: relative;
 		display flex
 		flex-direction row
 		border-bottom 1px solid rgb(238, 56, 49)
 		overflow hidden
 		padding 20px
 		min-height 21px
-		span
-			&:after
-				margin-right 140px
-				margin-left 140px
-				content ''
-				display inline-block
-				width 12px
-				height 12px
-				border-radius 100%
-				background-color rgb(238, 56, 49)
-			&:last-child:after
-				display none
+		.header_inner
+			white-space nowrap
+			display block
+			width 200%
+			height 30px
+			position absolute
+			overflow hidden
+			animation marquee 15s linear infinite
+			span
+				float left
+				width 50%
+				&:after
+					margin-right 140px
+					margin-left 140px
+					content ''
+					display inline-block
+					width 12px
+					height 12px
+					border-radius 100%
+					background-color rgb(238, 56, 49)
 	.content_block
 		display flex
 		flex-direction row
@@ -124,10 +144,9 @@ html
 						box-sizing border-box
 						display none
 						&.draw
-							// background-color grey
+							overflow hidden
 							canvas
 								cursor crosshair
-								// background-color lightgrey
 				&.active
 					margin-bottom auto
 					flex-grow 1

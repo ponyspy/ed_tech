@@ -8,7 +8,7 @@ html {
   padding: 0;
   height: 100%;
   color: #ee3831;
-  font-family: ABCFavoritPro-Light;
+  font-family: 'ABCFavoritPro-Light';
 }
 body a,
 html a {
@@ -28,12 +28,19 @@ html p {
 .column_body::-webkit-scrollbar {
   display: none;
 }
+.os-scrollbar {
+  margin: 4px !important;
+}
+.os-scrollbar-handle {
+  background: #ee3831 !important;
+}
 .outer_block {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 .outer_block .header_block {
+  position: relative;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #ee3831;
@@ -41,7 +48,21 @@ html p {
   padding: 20px;
   min-height: 21px;
 }
-.outer_block .header_block span:after {
+.outer_block .header_block .header_inner {
+  white-space: nowrap;
+  display: block;
+  width: 200%;
+  height: 30px;
+  position: absolute;
+  overflow: hidden;
+  -webkit-animation: marquee 15s linear infinite;
+          animation: marquee 15s linear infinite;
+}
+.outer_block .header_block .header_inner span {
+  float: left;
+  width: 50%;
+}
+.outer_block .header_block .header_inner span:after {
   margin-right: 140px;
   margin-left: 140px;
   content: '';
@@ -50,9 +71,6 @@ html p {
   height: 12px;
   border-radius: 100%;
   background-color: #ee3831;
-}
-.outer_block .header_block span:last-child:after {
-  display: none;
 }
 .outer_block .content_block {
   display: flex;
@@ -151,6 +169,9 @@ html p {
   box-sizing: border-box;
   display: none;
 }
+.outer_block .content_block .sections_block .section_item .column .column_body.draw {
+  overflow: hidden;
+}
 .outer_block .content_block .sections_block .section_item .column .column_body.draw canvas {
   cursor: crosshair;
 }
@@ -169,4 +190,20 @@ html p {
 .outer_block .content_block .sections_block .section_item.active a.dl,
 .outer_block .content_block .sections_block .section_item.active a.clear {
   display: inline !important;
+}
+@-webkit-keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
