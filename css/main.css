@@ -86,10 +86,12 @@ html p {
   border-right: 1px solid #ee3831;
 }
 .outer_block .content_block .main_block .main_title {
-  letter-spacing: -0.05em;
   margin-bottom: auto;
   padding: 20px;
-  font-size: 8vw;
+}
+.outer_block .content_block .main_block .main_title img {
+  display: block;
+  width: 100%;
 }
 .outer_block .content_block .main_block .main_desc {
   padding: 20px;
