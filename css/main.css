@@ -186,6 +186,9 @@ html p {
   min-height: 0;
   overflow: scroll;
 }
+.outer_block .content_block .sections_block .section_item.active .column {
+  cursor: auto;
+}
 .outer_block .content_block .sections_block .section_item.active .column_title {
   cursor: auto;
 }

@@ -7,7 +7,7 @@ $(function() {
 	var draw_el = $('.draw')[0];
 	var pad = new Sketchpad(draw_el);
 
-	pad.setLineSize(8);
+	pad.setLineSize(12);
 	pad.setLineColor('#ee3831');
 	setTimeout(function() {
 		pad.setCanvasSize(draw_el.offsetWidth - 40, draw_el.offsetHeight - 40);
