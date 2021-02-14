@@ -16,7 +16,7 @@ $(function() {
 	$(window).on('resize', function(e) {
 		pad.setCanvasSize(draw_el.offsetWidth - 40, draw_el.offsetHeight - 40);
 		pad.redraw();
-	}).trigger('resize');
+	});
 
 	$('.clear').on('click', function(e) {
 		pad.clear();
