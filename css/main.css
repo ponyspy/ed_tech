@@ -79,7 +79,7 @@ html p {
   min-height: 0;
 }
 .outer_block .content_block .main_block {
-  width: 50%;
+  width: 40%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,7 @@ html p {
   letter-spacing: -0.05em;
   margin-bottom: auto;
   padding: 20px;
-  font-size: 7vw;
+  font-size: 8vw;
 }
 .outer_block .content_block .main_block .main_desc {
   padding: 20px;
@@ -145,7 +145,7 @@ html p {
 .outer_block .content_block .sections_block .section_item .column .column_title span.clear,
 .outer_block .content_block .sections_block .section_item .column .column_title a.clear {
   display: none;
-  margin-right: 55px;
+  margin-right: auto;
 }
 .outer_block .content_block .sections_block .section_item .column .column_title span.dl,
 .outer_block .content_block .sections_block .section_item .column .column_title a.dl {
@@ -180,6 +180,9 @@ html p {
   flex-grow: 1;
   min-height: 0;
   overflow: scroll;
+}
+.outer_block .content_block .sections_block .section_item.active .column_title {
+  cursor: auto;
 }
 .outer_block .content_block .sections_block .section_item.active .column_body {
   display: block;
