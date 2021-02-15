@@ -18,14 +18,16 @@ body p,
 html p {
   margin: 0;
   padding: 0;
-  font-size: 22pt;
+  font-size: 21pt;
   line-height: 24pt;
   text-indent: 80px;
 }
+.column,
 .column_body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.column::-webkit-scrollbar,
 .column_body::-webkit-scrollbar {
   display: none;
 }
@@ -39,8 +41,8 @@ html p {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-size: 14pt;
-  line-height: 16pt;
+  font-size: 12pt;
+  line-height: 14pt;
 }
 .outer_block .header_block {
   position: relative;
@@ -159,6 +161,7 @@ html p {
 }
 .outer_block .content_block .sections_block .section_item .column .column_title span.num,
 .outer_block .content_block .sections_block .section_item .column .column_title a.num {
+  min-width: 20px;
   margin-right: 60px;
 }
 .outer_block .content_block .sections_block .section_item .column .column_title:after {
