@@ -9,6 +9,8 @@ html {
   height: 100%;
   color: #ee3831;
   font-family: 'ABCFavoritPro-Light';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 body a,
 html a {
