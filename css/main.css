@@ -24,13 +24,11 @@ html p {
   line-height: 24pt;
   text-indent: 80px;
 }
-.column,
-.column_body {
+.section_item {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.column::-webkit-scrollbar,
-.column_body::-webkit-scrollbar {
+.section_item::-webkit-scrollbar {
   display: none;
 }
 .os-scrollbar {
