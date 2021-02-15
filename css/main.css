@@ -178,6 +178,7 @@ html p {
   display: none;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.draw {
+  padding: 0;
   overflow: hidden;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.draw canvas {

@@ -10,11 +10,11 @@ $(function() {
 	pad.setLineSize(12);
 	pad.setLineColor('#ee3831');
 	setTimeout(function() {
-		pad.setCanvasSize(draw_el.offsetWidth - 40, draw_el.offsetHeight - 40);
+		pad.setCanvasSize(draw_el.offsetWidth, draw_el.offsetHeight);
 	}, 300);
 
 	$(window).on('resize', function(e) {
-		pad.setCanvasSize(draw_el.offsetWidth - 40, draw_el.offsetHeight - 40);
+		pad.setCanvasSize(draw_el.offsetWidth, draw_el.offsetHeight);
 		pad.redraw();
 	});
 
