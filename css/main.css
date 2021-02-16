@@ -55,8 +55,8 @@ html p {
 }
 .outer_block .header_block .header_inner {
   white-space: nowrap;
-  display: block;
-  width: 200%;
+  display: flex;
+  min-width: 200%;
   height: 30px;
   position: absolute;
   overflow: hidden;
@@ -64,7 +64,7 @@ html p {
           animation: marquee 15s linear infinite;
 }
 .outer_block .header_block .header_inner .header_marquee {
-  float: left;
+  display: flex;
   width: 50%;
 }
 .outer_block .header_block .header_inner .header_marquee span:after {
