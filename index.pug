@@ -6,7 +6,7 @@ html(lang='ru')
 		meta(name='description', content='edtech club')
 		meta(property='og:image' content='http://example.com/img/og.png')
 		meta(charset='utf-8')
-		link(rel='shortcut icon' href='http://example.com/img/favicon.png' type='image/png')
+		link(rel='icon' href='http://example.com/img/favicon.svg' type='image/svg+xml')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 		link(rel='stylesheet', type='text/css', href='css/swiper-bundle.min.css')
 		link(rel='stylesheet', type='text/css', href='css/OverlayScrollbars.min.css')
@@ -23,14 +23,14 @@ html(lang='ru')
 			.header_block: .header_inner
 				each i in [1, 2]
 					.header_marquee
-						span Следующая встреча – 25 февраля, 19:00
-						span Следующая встреча – 25 февраля, 19:00
-						span Следующая встреча – 25 февраля, 19:00
+						span следующая встреча – 25 февраля, 19:00
+						span следующая встреча – 25 февраля, 19:00
+						span следующая встреча – 25 февраля, 19:00
 
 			.content_block
 
 				.main_block
-					.main_title: img(src='img/main_logo.svg')
+					.main_title: img(src='img/logo/main.svg')
 					.main_desc
 						p Cообщество лидеров edtech в сегменте онлайн-образования для взрослых.
 						p Пространство коллабораций и партнерств, развивающих рынок.
@@ -50,6 +50,7 @@ html(lang='ru')
 								a.dl(href='#') сохранить
 								a.clear(href='#') очистить
 							.column_body.draw
+
 
 					.section_item
 
@@ -101,7 +102,7 @@ html(lang='ru')
 								p Медиагруппа «Актион-МЦФЭР» создала и развивает более 150 продуктов, которыми пользуются более 700 тысяч специалистов в России и СНГ ― бухгалтеров, юристов, кадровиков, финансистов, управленцев, сотрудников образовательных, медицинских и государственных учреждений.
 								p На онлайн-курсах ежегодно обучаются больше 120 тысяч специалистов.
 								br
-								div: img(src='img/action_logo.svg', style='width: 100%; max-width: 280px;')
+								img(src='img/logo/action.svg', style='width: 100%; max-width: 280px;')
 
 						.column.none
 
