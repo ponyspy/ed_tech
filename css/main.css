@@ -9,6 +9,8 @@ html {
   height: 100%;
   color: #ee3831;
   font-family: 'ABCFavoritPro-Light';
+  font-size: 12pt;
+  line-height: 14pt;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,8 +43,6 @@ html p {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-size: 12pt;
-  line-height: 14pt;
 }
 .outer_block .header_block {
   position: relative;
