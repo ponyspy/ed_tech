@@ -21,8 +21,11 @@ html(lang='ru')
 		.outer_block
 
 			.header_block: .header_inner
-				span Следующая встреча – 25 февраля, 19:00
-				span Следующая встреча – 25 февраля, 19:00
+				each i in [1, 2]
+					.header_marquee
+						span Следующая встреча – 25 февраля, 19:00
+						span Следующая встреча – 25 февраля, 19:00
+						span Следующая встреча – 25 февраля, 19:00
 
 			.content_block
 

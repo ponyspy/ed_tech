@@ -51,7 +51,7 @@ html p {
   border-bottom: 1px solid #ee3831;
   overflow: hidden;
   padding: 20px;
-  min-height: 21px;
+  min-height: 17px;
 }
 .outer_block .header_block .header_inner {
   white-space: nowrap;
@@ -63,11 +63,11 @@ html p {
   -webkit-animation: marquee 15s linear infinite;
           animation: marquee 15s linear infinite;
 }
-.outer_block .header_block .header_inner span {
+.outer_block .header_block .header_inner .header_marquee {
   float: left;
   width: 50%;
 }
-.outer_block .header_block .header_inner span:after {
+.outer_block .header_block .header_inner .header_marquee span:after {
   margin-right: 140px;
   margin-left: 140px;
   content: '';
