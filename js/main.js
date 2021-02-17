@@ -27,15 +27,8 @@ $(function() {
 		this.download = 'draw';
 	});
 
-	// $('.section_item').on('click', function(e) {
-	// 	$('.section_item').removeClass('active').filter(this).addClass('active');
-	// });
-
-	$('.column').on('click', function(e) {
-		var $section = $(this).parent();
-
-		$('.column').removeClass('active').filter(this).addClass('active');
-		$('.section_item').removeClass('active').filter($section[0]).addClass('active');
+	$('.section_item').on('click', function(e) {
+		$('.section_item').removeClass('active').filter(this).addClass('active');
 	});
 
 });
