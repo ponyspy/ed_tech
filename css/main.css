@@ -2,6 +2,50 @@
   font-family: 'ABCFavoritPro-Light';
   src: url("../fonts/ABCFavoritPro-Light-Trial.woff2");
 }
+@media screen and (max-width: 1280px) {
+  .main_block {
+    width: 50% !important;
+  }
+  .sections_block {
+    overflow: scroll !important;
+    justify-content: flex-start !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sections_block .section_item {
+    border-top: none !important;
+    flex-direction: column !important;
+  }
+  .sections_block .section_item:first-child {
+    display: none !important;
+  }
+  .sections_block .section_item:last-child .column:last-child {
+    border-bottom: none !important;
+  }
+  .sections_block .section_item .column {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    flex-grow: 0 !important;
+    overflow: visible !important;
+    min-height: initial !important;
+    border-right: none !important;
+    border-bottom: 1px solid #ee3831;
+  }
+  .sections_block .section_item .column.none {
+    display: none !important;
+  }
+  .sections_block .section_item .column .column_title {
+    cursor: auto !important;
+  }
+  .sections_block .section_item .column .column_body {
+    display: block !important;
+    flex-grow: 0 !important;
+    min-height: initial !important;
+  }
+  .sections_block .section_item.active {
+    overflow: visible !important;
+    min-height: initial !important;
+  }
+}
 body,
 html {
   margin: 0;
@@ -196,15 +240,15 @@ html p {
 .outer_block .content_block .sections_block .section_item.active .column_title {
   cursor: auto;
 }
+.outer_block .content_block .sections_block .section_item.active .column_title a.dl,
+.outer_block .content_block .sections_block .section_item.active .column_title a.clear {
+  display: inline;
+}
 .outer_block .content_block .sections_block .section_item.active .column_body {
   display: block;
   flex-grow: 1;
   overflow: auto;
   min-height: 0;
-}
-.outer_block .content_block .sections_block .section_item.active a.dl,
-.outer_block .content_block .sections_block .section_item.active a.clear {
-  display: inline !important;
 }
 @-webkit-keyframes marquee {
   0% {

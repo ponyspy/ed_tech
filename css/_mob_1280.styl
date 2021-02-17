@@ -1,0 +1,33 @@
+.main_block
+	width 50%!important
+
+.sections_block
+	overflow scroll!important
+	justify-content flex-start!important
+	-webkit-overflow-scrolling: touch
+	.section_item
+		border-top none!important
+		flex-direction column!important
+		&:first-child
+			display none!important
+		&:last-child .column:last-child
+			border-bottom none!important
+		.column
+			width 100%!important
+			margin-bottom 0!important
+			flex-grow 0!important
+			overflow visible!important
+			min-height initial!important
+			border-right none!important
+			border-bottom 1px solid rgb(238, 56, 49)
+			&.none
+				display none!important
+			.column_title
+				cursor auto!important
+			.column_body
+				display block!important
+				flex-grow 0!important
+				min-height initial!important
+		&.active
+			overflow visible!important
+			min-height initial!important
