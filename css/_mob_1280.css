@@ -1,0 +1,31 @@
+.main_block {
+  width: 50% !important;
+}
+.section_item {
+  flex-direction: column !important;
+  border-top: none !important;
+}
+.column {
+  flex-grow: 0 !important;
+  width: 100% !important;
+  border-right: none !important;
+  border-top: 1px solid #ee3831;
+}
+.column .column_title {
+  cursor: pointer !important;
+}
+.column .column_body {
+  display: none !important;
+}
+.column.none {
+  display: none !important;
+}
+.column.active {
+  flex-grow: 1 !important;
+}
+.column.active .column_title {
+  cursor: auto !important;
+}
+.column.active .column_body {
+  display: block !important;
+}
