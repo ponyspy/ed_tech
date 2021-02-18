@@ -1,7 +1,7 @@
 $(function() {
 
-	var column_scroll = OverlayScrollbars($('.column_body').not('.draw').toArray(), {
-		scrollbars : { autoHideDelay: 300, autoHide: 'scroll' }
+	$('.column_body').not('.draw').each(function() {
+		new SimpleBar(this);
 	});
 
 	var draw_el = $('.draw')[0];

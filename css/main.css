@@ -113,11 +113,14 @@ html p {
 .section_item::-webkit-scrollbar {
   display: none;
 }
-.os-scrollbar {
-  margin: 4px !important;
+.simplebar-track.simplebar-vertical {
+  right: 8px;
 }
-.os-scrollbar-handle {
-  background: #ee3831 !important;
+.simplebar-scrollbar:before {
+  background-color: #ee3831;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1 !important;
 }
 .outer_block {
   display: flex;
@@ -209,6 +212,7 @@ html p {
   flex-direction: column;
   min-height: 0;
   border-right: 1px solid #ee3831;
+  overflow: hidden;
 }
 .outer_block .content_block .sections_block .section_item .column:last-child {
   border-right: none;
@@ -283,7 +287,6 @@ html p {
 .outer_block .content_block .sections_block .section_item.active .column_body {
   display: block;
   flex-grow: 1;
-  overflow: auto;
   min-height: 0;
 }
 @-webkit-keyframes marquee {
