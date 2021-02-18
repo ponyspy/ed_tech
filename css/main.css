@@ -55,6 +55,10 @@
     width: 100% !important;
     z-index: 999 !important;
   }
+  .outer_block .header_block .header_inner {
+    -webkit-animation: marquee 7s linear infinite !important;
+            animation: marquee 7s linear infinite !important;
+  }
   .outer_block .content_block {
     margin-top: 60px !important;
     display: block !important;
@@ -62,6 +66,7 @@
   .outer_block .content_block .main_block {
     width: 100% !important;
     border-right: none !important;
+    border-bottom: 1px solid #ee3831;
   }
   .outer_block .content_block .main_block .main_footer {
     position: fixed !important;
