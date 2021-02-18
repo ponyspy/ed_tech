@@ -18,8 +18,8 @@
   .sections_block .section_item:first-child {
     display: none !important;
   }
-  .sections_block .section_item:last-child .column:last-child {
-    border-bottom: none !important;
+  .sections_block .section_item:nth-child(2) .column:first-child {
+    border-top: none !important;
   }
   .sections_block .section_item .column {
     width: 100% !important;
@@ -28,7 +28,7 @@
     overflow: visible !important;
     min-height: initial !important;
     border-right: none !important;
-    border-bottom: 1px solid #ee3831;
+    border-top: 1px solid #ee3831;
   }
   .sections_block .section_item .column.none {
     display: none !important;

@@ -10,8 +10,8 @@
 		flex-direction column!important
 		&:first-child
 			display none!important
-		&:last-child .column:last-child
-			border-bottom none!important
+		&:nth-child(2) .column:first-child
+			border-top none!important
 		.column
 			width 100%!important
 			margin-bottom 0!important
@@ -19,7 +19,7 @@
 			overflow visible!important
 			min-height initial!important
 			border-right none!important
-			border-bottom 1px solid rgb(238, 56, 49)
+			border-top 1px solid rgb(238, 56, 49)
 			&.none
 				display none!important
 			.column_title
