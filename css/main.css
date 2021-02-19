@@ -281,7 +281,7 @@ html p {
   overflow: hidden;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.draw canvas {
-  cursor: crosshair;
+  cursor: url("../img/cursor.svg") 15 25, auto;
 }
 .outer_block .content_block .sections_block .section_item.active {
   margin-bottom: auto;
