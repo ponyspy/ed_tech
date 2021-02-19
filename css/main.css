@@ -2,7 +2,7 @@
   font-family: 'ABCFavoritPro-Light';
   src: url("../fonts/ABCFavoritPro-Light-Trial.woff2");
 }
-@media only screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .main_block {
     width: 50% !important;
   }
