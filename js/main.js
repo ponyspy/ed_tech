@@ -9,9 +9,11 @@ $(function() {
 			: $main_title.removeAttr('style').removeClass('fix');
 	});
 
-	$('.column_body').not('.draw').each(function() {
-		new SimpleBar(this);
-	});
+	setTimeout(function() {
+		$('.column_body').not('.draw').each(function() {
+			new SimpleBar(this);
+		});
+	}, 300);
 
 	var draw_el = $('.draw')[0];
 	var pad = new Sketchpad(draw_el);
