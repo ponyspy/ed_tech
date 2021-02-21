@@ -1,12 +1,12 @@
 $(function() {
 
 	$(document).on('scroll', function(e) {
-		var logo_height = $('.main_title').height();
-		var desc_offset = $('.main_desc').offset().top;
+		var $main_title = $('.main_title');
+		var stop_offset = $('.main_desc').offset().top - $main_title.height() - 82;
 
-		$(this).scrollTop() >= desc_offset - logo_height - 80
-			? $('.main_title').css('top', desc_offset - logo_height - 80).addClass('fix')
-			: $('.main_title').removeAttr('style').removeClass('fix');
+		$(this).scrollTop() >= stop_offset
+			? $main_title.css('top', stop_offset).addClass('fix')
+			: $main_title.removeAttr('style').removeClass('fix');
 	});
 
 	$('.column_body').not('.draw').each(function() {
