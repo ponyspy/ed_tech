@@ -2,7 +2,7 @@ $(function() {
 
 	$(document).on('scroll', function(e) {
 		var $main_title = $('.main_title');
-		var stop_offset = $('.main_desc').offset().top - $main_title.height() - 82;
+		var stop_offset = $('.main_desc').offset().top - $main_title.height() - 80;
 
 		$(this).scrollTop() >= stop_offset
 			? $main_title.css('top', stop_offset).addClass('fix')
