@@ -58,7 +58,6 @@
 }
 @media screen and (max-width: 800px) {
   .outer_block .header_block {
-    display: block !important;
     background-color: #fff;
     position: fixed !important;
     top: 0 !important;
@@ -66,8 +65,12 @@
     z-index: 999 !important;
   }
   .outer_block .header_block .header_inner {
-    -webkit-animation: marquee 7s linear infinite !important;
-            animation: marquee 7s linear infinite !important;
+    -webkit-animation: marquee 5s linear infinite !important;
+            animation: marquee 5s linear infinite !important;
+  }
+  .outer_block .header_block .header_inner .header_marquee span:after {
+    margin-right: 80px !important;
+    margin-left: 80px !important;
   }
   .outer_block .content_block {
     margin-top: 60px !important;
