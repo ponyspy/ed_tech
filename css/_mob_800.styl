@@ -13,8 +13,10 @@
 		display block!important
 		height 100%!important
 		.main_block
+			position relative
+			display block!important
 			width 100%!important
-			height 100%!important
+			height calc(100% - 58px)!important
 			border-right none!important
 			border-bottom 1px solid rgb(238, 56, 49)
 			.main_title
@@ -27,11 +29,10 @@
 				z-index 99!important
 				&.fix
 					position absolute!important
-					// top 358px!important
 			.main_desc
 				position absolute!important
 				width 100%!important
-				bottom 60px!important
+				bottom 0px!important
 				box-sizing border-box
 			.main_footer
 				position fixed!important

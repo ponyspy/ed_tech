@@ -75,8 +75,10 @@
     height: 100% !important;
   }
   .outer_block .content_block .main_block {
+    position: relative;
+    display: block !important;
     width: 100% !important;
-    height: 100% !important;
+    height: calc(100% - 58px) !important;
     border-right: none !important;
     border-bottom: 1px solid #ee3831;
   }
@@ -95,7 +97,7 @@
   .outer_block .content_block .main_block .main_desc {
     position: absolute !important;
     width: 100% !important;
-    bottom: 60px !important;
+    bottom: 0px !important;
     box-sizing: border-box;
   }
   .outer_block .content_block .main_block .main_footer {

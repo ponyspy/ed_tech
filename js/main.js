@@ -1,13 +1,13 @@
 $(function() {
 
-	$(document)
-		.on('scroll', function(e) {
-			var desc_offset = $('.main_desc').offset().top
+	$(document).on('scroll', function(e) {
+		var logo_height = $('.main_title').height();
+		var desc_offset = $('.main_desc').offset().top;
 
-			$(this).scrollTop() >= desc_offset - 150
-				? $('.main_title').css('top', desc_offset - 90).addClass('fix')
-				: $('.main_title').removeAttr('style').removeClass('fix');
-		});
+		$(this).scrollTop() >= desc_offset - logo_height - 80
+			? $('.main_title').css('top', desc_offset - logo_height - 80).addClass('fix')
+			: $('.main_title').removeAttr('style').removeClass('fix');
+	});
 
 	$('.column_body').not('.draw').each(function() {
 		new SimpleBar(this);
