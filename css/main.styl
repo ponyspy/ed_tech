@@ -143,8 +143,11 @@ html
 					&:last-child
 						border-right none
 					&.none
+						// background: linear-gradient(to top left, rgba(238, 56, 49, 0) 0%, rgba(238, 56, 49, 0) calc(50% - 0.8px), rgba(238, 56, 49, 1) 50%, rgba(238, 56, 49, 0) calc(50% + 0.8px), rgba(238, 56, 49, 0) 100%)
 						cursor pointer
-						background: linear-gradient(to top left, rgba(238, 56, 49, 0) 0%, rgba(238, 56, 49, 0) calc(50% - 0.8px), rgba(238, 56, 49, 1) 50%, rgba(238, 56, 49, 0) calc(50% + 0.8px), rgba(238, 56, 49, 0) 100%)
+						position relative
+						svg
+							position absolute
 					.column_title
 						padding 20px
 						box-sizing border-box

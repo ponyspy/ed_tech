@@ -277,7 +277,10 @@ html p {
 }
 .outer_block .content_block .sections_block .section_item .column.none {
   cursor: pointer;
-  background: linear-gradient(to top left, rgba(238,56,49,0) 0%, rgba(238,56,49,0) calc(50% - 0.8px), #ee3831 50%, rgba(238,56,49,0) calc(50% + 0.8px), rgba(238,56,49,0) 100%);
+  position: relative;
+}
+.outer_block .content_block .sections_block .section_item .column.none svg {
+  position: absolute;
 }
 .outer_block .content_block .sections_block .section_item .column .column_title {
   padding: 20px;
