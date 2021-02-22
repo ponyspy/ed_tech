@@ -14,9 +14,12 @@ body, html
 		z-index 999!important
 		.header_inner
 			animation marquee 5s linear infinite!important
-			.header_marquee span:after
-				margin-right 80px!important
-				margin-left 80px!important
+			.header_marquee span
+				&.mobile
+					display none!important
+				&:after
+					margin-right 80px!important
+					margin-left 80px!important
 	.content_block
 		margin-top 60px!important
 		display block!important

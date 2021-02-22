@@ -75,6 +75,9 @@
     -webkit-animation: marquee 5s linear infinite !important;
             animation: marquee 5s linear infinite !important;
   }
+  .outer_block .header_block .header_inner .header_marquee span.mobile {
+    display: none !important;
+  }
   .outer_block .header_block .header_inner .header_marquee span:after {
     margin-right: 80px !important;
     margin-left: 80px !important;
