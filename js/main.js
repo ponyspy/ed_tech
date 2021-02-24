@@ -48,11 +48,11 @@ $(function() {
     },
     breakpoints: {
       1200: {
-        autoHeight: true,
+        // autoHeight: true,
         slidesPerView: 2
       },
       800: {
-        autoHeight: true,
+        // autoHeight: true,
         slidesPerView: 1
       }
     },

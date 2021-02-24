@@ -183,12 +183,27 @@ html
 						display none
 						&.photos
 							position relative
+							padding 0
 							.swiper-photos
+								position absolute
+								width 100%
+								height 100%
+								// background-color red
 								.swiper-wrapper
-									align-items center!important
-									min-height 100%
+									width 100%
+									height 100%
+									flex-grow 1
+									min-height 0
 									.swiper-slide
-										display block
+										// background-color green
+										min-height 100%
+										width 33.333333333333333%
+										background-size contain
+										background-repeat no-repeat
+										background-position center
+										border-top 60px solid transparent
+										border-bottom 80px solid transparent
+										box-sizing border-box
 								.swiper-pagination
 									bottom 20px
 									.swiper-pagination-bullet

@@ -330,13 +330,28 @@ html p {
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos {
   position: relative;
+  padding: 0;
+}
+.outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-wrapper {
-  align-items: center !important;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  min-height: 0;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-wrapper .swiper-slide {
-  display: block;
+  min-height: 100%;
+  width: 33.333333333333336%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top: 60px solid transparent;
+  border-bottom: 80px solid transparent;
+  box-sizing: border-box;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-pagination {
   bottom: 20px;
