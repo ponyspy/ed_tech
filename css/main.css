@@ -329,18 +329,20 @@ html p {
   display: none;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos {
-  padding: 0;
   position: relative;
-}
-.outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #f00;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-wrapper {
   align-items: center !important;
   min-height: 100%;
+}
+.outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-wrapper .swiper-slide {
+  display: block;
+}
+.outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-pagination {
+  bottom: 20px;
+}
+.outer_block .content_block .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-pagination .swiper-pagination-bullet {
+  background-color: #ee3831;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.draw {
   padding: 0;

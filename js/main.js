@@ -39,7 +39,9 @@ $(function() {
 	});
 
   var swPhotos = new Swiper('.swiper-photos', {
-    spaceBetween: 40,
+    spaceBetween: 140,
+    centeredSlides: true,
+    loop: true,
     // simulateTouch: false,
     keyboard: {
       enabled: true
@@ -47,7 +49,7 @@ $(function() {
     breakpoints: {
       1200: {
         autoHeight: true,
-        slidesPerView: 3
+        slidesPerView: 2
       },
       800: {
         autoHeight: true,
@@ -63,6 +65,18 @@ $(function() {
 	$('.section_item').on('click', function(e) {
 		$('.section_item').removeClass('active').filter(this).addClass('active');
 		swPhotos.update();
+	});
+
+	$('.swiper-photos').on('click', '.swiper-slide', function(e) {
+		if ($(document).width() <= 800) return false;
+
+		var $this = $(this);
+
+		if ($this.hasClass('swiper-slide-next')) {
+			swPhotos.slideNext();
+		} else if ($this.hasClass('swiper-slide-prev')) {
+			swPhotos.slidePrev();
+		}
 	});
 
 });

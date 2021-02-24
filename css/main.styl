@@ -182,18 +182,17 @@ html
 						box-sizing border-box
 						display none
 						&.photos
-							padding 0
 							position relative
 							.swiper-photos
-								position absolute
-								width 100%
-								height 100%
-								background-color red
 								.swiper-wrapper
 									align-items center!important
 									min-height 100%
-									// .swiper-slide
-
+									.swiper-slide
+										display block
+								.swiper-pagination
+									bottom 20px
+									.swiper-pagination-bullet
+										background-color rgb(238, 56, 49)
 						&.draw
 							padding 0
 							overflow hidden
