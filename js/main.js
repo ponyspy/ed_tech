@@ -39,7 +39,7 @@ $(function() {
 	});
 
   var swPhotos = new Swiper('.swiper-photos', {
-    spaceBetween: 140,
+  	spaceBetween: 140,
     centeredSlides: true,
     loop: true,
     // simulateTouch: false,
@@ -47,11 +47,11 @@ $(function() {
       enabled: true
     },
     breakpoints: {
-      1200: {
+      1250: {
         // autoHeight: true,
         slidesPerView: 2
       },
-      800: {
+      1200: {
         // autoHeight: true,
         slidesPerView: 1
       }

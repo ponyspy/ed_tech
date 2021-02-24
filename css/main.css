@@ -41,6 +41,19 @@
     flex-grow: 0 !important;
     min-height: initial !important;
   }
+  .sections_block .section_item .column .column_body.photos {
+    padding: 20px !important;
+  }
+  .sections_block .section_item .column .column_body.photos .swiper-photos {
+    position: relative !important;
+  }
+  .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-wrapper .swiper-slide {
+    width: 100% !important;
+    padding-top: 100% !important;
+  }
+  .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-pagination {
+    bottom: 0 !important;
+  }
   .sections_block .section_item.active {
     overflow: visible !important;
     min-height: initial !important;
