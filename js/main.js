@@ -10,7 +10,7 @@ $(function() {
 	});
 
 	setTimeout(function() {
-		$('.column_body').not('.draw').each(function() {
+		$('.column_body').not('.draw, .photos').each(function() {
 			new SimpleBar(this);
 		});
 	}, 300);
@@ -38,8 +38,31 @@ $(function() {
 		this.download = 'draw';
 	});
 
+  var swPhotos = new Swiper('.swiper-photos', {
+    spaceBetween: 40,
+    // simulateTouch: false,
+    keyboard: {
+      enabled: true
+    },
+    breakpoints: {
+      1200: {
+        autoHeight: true,
+        slidesPerView: 3
+      },
+      800: {
+        autoHeight: true,
+        slidesPerView: 1
+      }
+    },
+    pagination: {
+      clickable: true,
+      el: '.swiper-pagination',
+    }
+  });
+
 	$('.section_item').on('click', function(e) {
 		$('.section_item').removeClass('active').filter(this).addClass('active');
+		swPhotos.update();
 	});
 
 });
