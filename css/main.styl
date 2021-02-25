@@ -188,14 +188,13 @@ html
 								position absolute
 								width 100%
 								height 100%
-								// background-color red
+								cursor grab
 								.swiper-wrapper
 									width 100%
 									height 100%
 									flex-grow 1
 									min-height 0
 									.swiper-slide
-										// background-color green
 										min-height 100%
 										width 33.333333333333333%
 										background-size contain
@@ -204,6 +203,9 @@ html
 										border-top 60px solid transparent
 										border-bottom 80px solid transparent
 										box-sizing border-box
+										&.swiper-slide-next
+										&.swiper-slide-prev
+											cursor pointer
 								.swiper-pagination
 									bottom 20px
 									.swiper-pagination-bullet
