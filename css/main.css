@@ -50,6 +50,8 @@
   .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-wrapper .swiper-slide {
     width: 100% !important;
     padding-top: 100% !important;
+    border-top: 0px solid transparent !important;
+    border-bottom: 60px solid transparent !important;
   }
   .sections_block .section_item .column .column_body.photos .swiper-photos .swiper-pagination {
     bottom: 0 !important;
@@ -138,7 +140,7 @@
   }
   .outer_block .content_block .sections_block {
     width: 100% !important;
-    padding-bottom: 80px !important;
+    padding-bottom: 50px !important;
   }
   .outer_block .content_block .sections_block .column {
     width: 100% !important;
@@ -151,6 +153,13 @@
   }
   .outer_block .content_block .sections_block .column .column_body {
     padding: 15px !important;
+  }
+  .outer_block .content_block .sections_block .column .column_body.photos .swiper-photos {
+    position: relative !important;
+  }
+  .outer_block .content_block .sections_block .column .column_body.photos .swiper-photos .swiper-wrapper .swiper-slide {
+    border-top: 0px solid transparent !important;
+    border-bottom: 40px solid transparent !important;
   }
 }
 body,
