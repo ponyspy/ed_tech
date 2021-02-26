@@ -349,6 +349,7 @@ html p {
   display: none;
 }
 .outer_block .content_block .sections_block .section_item .column .column_body.photos {
+  display: none !important;
   position: relative;
   padding: 0;
 }
