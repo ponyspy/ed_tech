@@ -49,11 +49,6 @@ var build_flags = {
 	'-m --maps': 'Generate sourcemaps files.'
 };
 
-var clean_flags = {
-	'-f --force': 'Force clean public data.',
-	'--reset': 'Reset project to initial state.'
-};
-
 
 // Handlers Block
 
@@ -110,11 +105,7 @@ var paths = {
 		src: 'assets/**',
 		dest: 'dist/assets'
 	},
-	clean: {
-		base: ['dist/**', 'dist/**'],
-		force: ['node_modules/**', 'dist/**'],
-		reset: ['node_modules/**', 'dist/**']
-	}
+	clean: 'dist/**'
 };
 
 
@@ -122,12 +113,7 @@ var paths = {
 
 
 function clean(callback) {
-	var clean = paths.clean.base;
-
-	if (Force) clean = clean.concat(paths.clean.force);
-	if (Reset) clean = [].concat(paths.clean.base, paths.clean.force, paths.clean.reset);
-
-	return rimraf('{' + clean.join(',') + '}', callback);
+	return rimraf(paths.clean, callback);
 }
 
 function assets() {
@@ -215,7 +201,6 @@ function watch() {
 
 var task_clean = clean;
 		clean.description = 'Clean project folders';
-		clean.flags = clean_flags;
 
 var task_build = gulp.series(clean, gulp.parallel(templates, styles, scripts, assets));
 		task_build.description = 'Build all...';
