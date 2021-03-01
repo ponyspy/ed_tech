@@ -111,7 +111,7 @@ var paths = {
 		dest: 'dist/assets'
 	},
 	clean: {
-		base: ['dist/**'],
+		base: ['dist/**', 'dist/**'],
 		force: ['node_modules/**', 'dist/**'],
 		reset: ['node_modules/**', 'dist/**']
 	}
@@ -131,13 +131,13 @@ function clean(callback) {
 }
 
 function assets() {
-	var root_filter = filter(['*.txt'], {restore: true});
+	var root_filter = filter('**/*.txt', {restore: true});
 
 	return pump([
 		gulp.src(paths.assets.src),
 			changed(paths.assets.dest),
 			root_filter,
-				rename(function(path) { path.dirname = path.dirname.replace('.', '../'); console.log(path) }),
+				rename(function(path) {path.dirname = path.dirname.replace('.', '../'); }),
 			root_filter.restore,
 		gulp.dest(paths.assets.dest)
 	], errorLogger);
