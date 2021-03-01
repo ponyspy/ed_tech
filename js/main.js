@@ -58,6 +58,8 @@ $(function() {
     },
     pagination: {
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 3,
       el: '.swiper-pagination',
     }
   });
