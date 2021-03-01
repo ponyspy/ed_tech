@@ -4,7 +4,8 @@
   "description": "ed_tech ====",
   "main": "app.js",
   "dependencies": {
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "st": "^2.0.0"
   },
   "devDependencies": {
     "ansi-colors": "^4.1.1",
@@ -14,7 +15,9 @@
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^4.0.1",
     "gulp-filter": "^6.0.0",
+    "gulp-inject-string": "^1.1.2",
     "gulp-jshint": "^2.1.0",
+    "gulp-livereload": "^4.0.2",
     "gulp-noop": "^1.0.1",
     "gulp-progeny": "^0.4.1",
     "gulp-pug": "^4.0.1",

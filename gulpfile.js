@@ -1,11 +1,16 @@
+var http = require('http');
+
 var rimraf = require('rimraf'),
 		pump = require('pump'),
 		colors = require('ansi-colors'),
+		st = require('st'),
 		argv = require('minimist')(process.argv.slice(2)),
 		log = require('fancy-log');
 
 var gulp = require('gulp'),
 		noop = require('gulp-noop'),
+		livereload = require('gulp-livereload'),
+		inject = require('gulp-inject-string'),
 		changed = require('gulp-changed'),
 		cache = require('gulp-cached'),
 		progeny = require('gulp-progeny'),
@@ -24,10 +29,9 @@ var gulp = require('gulp'),
 var Prod = argv.p || argv.prod;
 var Lint = argv.l || argv.lint;
 var Maps = argv.m || argv.maps;
-var Force = argv.f || argv.force;
-var Reset = argv.reset;
 
-if (!Force && !Reset) log([
+
+log([
 	'Lint ',
 	(Lint ? colors.green('enabled') : colors.red('disabled')),
 	', sourcemaps ',
@@ -36,6 +40,8 @@ if (!Force && !Reset) log([
 	(Prod ? colors.underline.green('production') : colors.underline.yellow('development')),
 	' mode.',
 ].join(''));
+
+if (!Prod) log('Server start on http://localhost:8080')
 
 
 // Flags Block
@@ -104,6 +110,7 @@ var paths = {
 		src: 'assets/**',
 		dest: 'dist'
 	},
+	livereload: '<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js"></\'+ \'script>\')</script>',
 	clean: 'dist/**'
 };
 
@@ -119,7 +126,7 @@ function assets() {
 	return pump([
 		gulp.src(paths.assets.src),
 			changed(paths.assets.dest),
-		gulp.dest(paths.assets.dest)
+		gulp.dest(paths.assets.dest), !Prod ? livereload() : noop()
 	], errorLogger);
 }
 
@@ -136,7 +143,7 @@ function styles() {
 				cascade: !Prod
 			}),
 			Maps ? sourcemaps.write('.') : noop(),
-		gulp.dest(paths.styles.dest)
+		gulp.dest(paths.styles.dest), !Prod ? livereload() : noop()
 	], errorLogger);
 }
 
@@ -149,7 +156,7 @@ function scripts() {
 			Maps ? sourcemaps.init({ loadMaps: true }) : noop(),
 			Prod ? uglify() : noop(),
 			Maps ? sourcemaps.write('.', { mapSources: function(path) { return path.split('/').slice(-1)[0]; } }) : noop(),
-		gulp.dest(paths.scripts.dest)
+		gulp.dest(paths.scripts.dest), !Prod ? livereload() : noop()
 	], errorLogger);
 }
 
@@ -160,11 +167,14 @@ function templates() {
 			progeny(),
 			filter(['**/*.pug', '!**/_*.pug']),
 			pug({'pretty': !Prod}),
-		gulp.dest(paths.templates.dest)
+			!Prod ? inject.before('</body>', paths.livereload) : noop(),
+		gulp.dest(paths.templates.dest), !Prod ? livereload() : noop()
 	], errorLogger);
 }
 
 function watch() {
+	livereload.listen({quiet: true});
+
 	gulp.watch(paths.scripts.src, scripts)
 			.on('unlink', cacheClean)
 			.on('change', watchLogger('changed'))
@@ -189,6 +199,14 @@ function watch() {
 			.on('unlink', watchLogger('removed'));
 }
 
+function server(callback) {
+	if (Prod) return callback();
+
+	http.createServer(
+		st({ path: __dirname + '/dist', index: 'index.html', cache: false })
+	).listen(8080, callback);
+}
+
 
 // Exports Block
 
@@ -200,7 +218,7 @@ var task_build = gulp.series(clean, gulp.parallel(templates, styles, scripts, as
 		task_build.description = 'Build all...';
 		task_build.flags = build_flags;
 
-var task_default = gulp.series(clean, gulp.parallel(templates, styles, scripts, assets), watch);
+var task_default = gulp.series(clean, gulp.parallel(templates, styles, scripts, assets), server, watch);
 		task_default.description = 'Build and start watching';
 		task_default.flags = build_flags;
 
