@@ -10,7 +10,6 @@ var gulp = require('gulp'),
 		cache = require('gulp-cached'),
 		progeny = require('gulp-progeny'),
 		filter = require('gulp-filter'),
-		rename = require('gulp-rename'),
 		sourcemaps = require('gulp-sourcemaps'),
 		stylus = require('gulp-stylus'),
 		pug = require('gulp-pug'),
@@ -103,7 +102,7 @@ var paths = {
 	},
 	assets: {
 		src: 'assets/**',
-		dest: 'dist/assets'
+		dest: 'dist'
 	},
 	clean: 'dist/**'
 };
@@ -117,14 +116,9 @@ function clean(callback) {
 }
 
 function assets() {
-	var root_filter = filter('**/*.txt', {restore: true});
-
 	return pump([
 		gulp.src(paths.assets.src),
 			changed(paths.assets.dest),
-			root_filter,
-				rename(function(path) {path.dirname = path.dirname.replace('.', '../'); }),
-			root_filter.restore,
 		gulp.dest(paths.assets.dest)
 	], errorLogger);
 }
