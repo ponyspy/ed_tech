@@ -179,8 +179,6 @@ function templates() {
 }
 
 function watch() {
-	if (Reload) livereload.listen({quiet: true});
-
 	gulp.watch(paths.scripts.src, scripts)
 			.on('unlink', cacheClean)
 			.on('change', watchLogger('changed'))
@@ -206,6 +204,7 @@ function watch() {
 }
 
 function server(callback) {
+	if (Reload) livereload.listen({quiet: true});
 	if (!Serv) return callback();
 
 	http.createServer(
