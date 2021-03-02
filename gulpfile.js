@@ -29,6 +29,8 @@ var gulp = require('gulp'),
 var Prod = argv.p || argv.prod;
 var Lint = argv.l || argv.lint;
 var Maps = argv.m || argv.maps;
+var Serv = argv.s || argv.serv;
+var Reload = argv.r || argv.reload;
 
 
 log([
@@ -41,7 +43,9 @@ log([
 	' mode.',
 ].join(''));
 
-if (!Prod) log('Server start on http://localhost:8080')
+if (Serv) log('Static server ' + colors.green('start') + ' on ' + colors.underline.white('http://localhost:8080'));
+
+if (Reload) log('Livereload server ' + colors.green('start'));
 
 
 // Flags Block
@@ -51,7 +55,9 @@ var build_flags = {
 	'-p --prod': 'Builds in ' + colors.underline.green('production') + ' mode (minification, etc).',
 	'-d --dev': 'Builds in ' + colors.underline.yellow('development') + ' mode (default).',
 	'-l --lint': 'Lint JavaScript code.',
-	'-m --maps': 'Generate sourcemaps files.'
+	'-m --maps': 'Generate sourcemaps files.',
+	'-s --serv': 'Launch static server for dist folder.',
+	'-r --reload': 'Launch livereload server.'
 };
 
 
@@ -126,7 +132,7 @@ function assets() {
 	return pump([
 		gulp.src(paths.assets.src),
 			changed(paths.assets.dest),
-		gulp.dest(paths.assets.dest), !Prod ? livereload() : noop()
+		gulp.dest(paths.assets.dest), Reload ? livereload() : noop()
 	], errorLogger);
 }
 
@@ -143,7 +149,7 @@ function styles() {
 				cascade: !Prod
 			}),
 			Maps ? sourcemaps.write('.') : noop(),
-		gulp.dest(paths.styles.dest), !Prod ? livereload() : noop()
+		gulp.dest(paths.styles.dest), Reload ? livereload() : noop()
 	], errorLogger);
 }
 
@@ -156,7 +162,7 @@ function scripts() {
 			Maps ? sourcemaps.init({ loadMaps: true }) : noop(),
 			Prod ? uglify() : noop(),
 			Maps ? sourcemaps.write('.', { mapSources: function(path) { return path.split('/').slice(-1)[0]; } }) : noop(),
-		gulp.dest(paths.scripts.dest), !Prod ? livereload() : noop()
+		gulp.dest(paths.scripts.dest), Reload ? livereload() : noop()
 	], errorLogger);
 }
 
@@ -167,13 +173,13 @@ function templates() {
 			progeny(),
 			filter(['**/*.pug', '!**/_*.pug']),
 			pug({'pretty': !Prod}),
-			!Prod ? inject.before('</body>', paths.livereload) : noop(),
-		gulp.dest(paths.templates.dest), !Prod ? livereload() : noop()
+			Reload ? inject.before('</head>', paths.livereload) : noop(),
+		gulp.dest(paths.templates.dest), !Reload ? livereload() : noop()
 	], errorLogger);
 }
 
 function watch() {
-	livereload.listen({quiet: true});
+	if (Reload) livereload.listen({quiet: true});
 
 	gulp.watch(paths.scripts.src, scripts)
 			.on('unlink', cacheClean)
@@ -200,7 +206,7 @@ function watch() {
 }
 
 function server(callback) {
-	if (Prod) return callback();
+	if (!Serv) return callback();
 
 	http.createServer(
 		st({ path: __dirname + '/dist', index: 'index.html', cache: false })
