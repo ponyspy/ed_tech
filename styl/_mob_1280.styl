@@ -29,17 +29,19 @@
 				flex-grow 0!important
 				min-height initial!important
 				&.photos
-					padding 20px!important
-					.swiper-photos
+					padding 0!important
+					.slider_block
 						position relative!important
-						.swiper-wrapper
-							.swiper-slide
-								width 100%!important
-								padding-top 100%!important
-								border-top 0px solid transparent!important
-								border-bottom 60px solid transparent!important
-						.swiper-pagination
-							bottom 0!important
+						width 100%!important
+						height auto!important
+						overflow-x scroll!important
+						.slider_inner
+							height auto!important
+							.slide_item
+								width 80%!important
+								height auto!important
+								padding-top 0!important
+								padding-bottom 0!important
 		&.active
 			overflow visible!important
 			min-height initial!important
