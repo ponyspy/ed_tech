@@ -1,3 +1,5 @@
+var is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 $(function() {
 
 	$(document).on('scroll', function(e) {
@@ -38,47 +40,19 @@ $(function() {
 		this.download = 'draw';
 	});
 
-  var swPhotos = new Swiper('.swiper-photos', {
-  	spaceBetween: 140,
-    centeredSlides: true,
-    loop: true,
-    // simulateTouch: false,
-    keyboard: {
-      enabled: true
-    },
-    breakpoints: {
-      1250: {
-        // autoHeight: true,
-        slidesPerView: 2
-      },
-      1200: {
-        // autoHeight: true,
-        slidesPerView: 1
-      }
-    },
-    pagination: {
-      clickable: true,
-      dynamicBullets: true,
-      dynamicMainBullets: 3,
-      el: '.swiper-pagination',
-    }
-  });
-
-	$('.swiper-photos').on('click', '.swiper-slide', function(e) {
-		if ($(document).width() <= 800) return false;
-
-		var $this = $(this);
-
-		if ($this.hasClass('swiper-slide-next')) {
-			swPhotos.slideNext();
-		} else if ($this.hasClass('swiper-slide-prev')) {
-			swPhotos.slidePrev();
-		}
-	});
-
 	$('.section_item').on('click', function(e) {
 		$('.section_item').removeClass('active').filter(this).addClass('active');
-		swPhotos.update();
 	});
+
+	if (!is_mobile) {
+		$(document).on('mousemove', '.slider_block', function(e) {
+			var $this = $(this);
+			var padding = 100;
+			var percent = (e.pageX - $this.offset().left - padding) / ($this.width() - padding * 2);
+			// console.log((e.pageX - $this.offset().left) / $this.width() * 100) // real percentage
+
+			$this.scrollLeft((this.scrollWidth - $this.width()) * percent);
+		});
+	}
 
 });
