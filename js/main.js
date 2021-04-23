@@ -55,4 +55,10 @@ $(function() {
 		});
 	}
 
+	$(document).on('click', '.slider_block', function(e) {
+		$(this).hasClass('open')
+			? $(this).removeClass('open')
+			: $('.slider_block').removeClass('open').filter(this).addClass('open');
+	});
+
 });

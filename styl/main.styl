@@ -201,13 +201,22 @@ html
 								padding-right 20px
 								padding-top 60px
 								padding-bottom 20px
+								display flex
+								align-items center
+								span
+									padding-left 68px
+								img
+									height 20px
 							.slider_block
 								position relative
 								overflow hidden
 								white-space nowrap
 								font-size 0
 								width 100%
-								cursor ew-resize
+								cursor pointer
+								&.open .slide_item
+									cursor ew-resize
+									width 80%!important
 								&:last-child
 									padding-bottom 60px
 								.slider_inner
@@ -217,7 +226,7 @@ html
 										margin-left 20px
 										margin-right 20px
 										box-sizing border-box
-										width 75%
+										width 25%
 										img
 											width 100%
 											display inline-block
