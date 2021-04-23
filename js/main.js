@@ -12,7 +12,7 @@ $(function() {
 	});
 
 	setTimeout(function() {
-		$('.column_body').not('.draw, .photos').each(function() {
+		$('.column_body').not('.draw').each(function() {
 			new SimpleBar(this);
 		});
 	}, 300);
