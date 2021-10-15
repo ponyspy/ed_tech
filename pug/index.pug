@@ -22,13 +22,13 @@ html(lang='ru')
 		.outer_block
 
 			.header_block: .header_inner
-				- var prefix = 'следующая встреча — '
-				- var line = ' 23 сентября 2021 г., 19:00'
+				- var prefix = 'следующая встреча'
+				- var line = '28 октября 2021 г.'
 				each i in [1, 2]
 					.header_marquee
 						span= prefix + line
-						span.mobile= prefix + line
-						span.mobile= prefix + line
+						span.mobile= prefix + ' — ' + line
+						span.mobile= prefix + ' — ' + line
 
 			.content_block
 
@@ -116,6 +116,39 @@ html(lang='ru')
 								span.num 06
 								span фотоархив
 							.column_body.photos
+
+								.slider_title
+									img(src='img/icons/folder.svg')
+									span 23.09.2021
+								.slider_block: .slider_inner
+
+									.slide_item
+										img(src='img/slider/23_09_2021/01.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/02.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/03.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/04.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/05.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/06.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/07.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/08.jpg')
+										//- .slide_desc встреча 01.04.2021
+									.slide_item
+										img(src='img/slider/23_09_2021/09.jpg')
+										//- .slide_desc встреча 01.04.2021
 
 
 								.slider_title
