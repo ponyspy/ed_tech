@@ -16,8 +16,10 @@ npm ci
 npx gulp -rs
 ```
 
-### Build for productions
+### Build for production
 
 ```bash
 npx gulp build -p
 ```
+
+Build results available in ***/dist*** folder, serve with folder with any web server, ex. nginx.
